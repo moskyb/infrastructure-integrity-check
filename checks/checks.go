@@ -21,5 +21,8 @@ type Notice struct {
 }
 
 func All(sess *session.Session) []Check {
-	return []Check{}
+	return []Check{
+		NewInstancesInOtherRegionsCheck(sess),
+		NewAMIsAreValidCheck(sess),
+	}
 }

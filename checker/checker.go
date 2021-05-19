@@ -45,7 +45,7 @@ func (c *Checker) CheckAll() ([]checks.Notice, error) {
 }
 
 func (c *Checker) doCheck(check checks.Check) {
-	c.logger.Infof("Running check %q...", check.Name())
+	c.logger.Infof("Running check %q", check.Name())
 	notices, err := check.Do()
 	if err != nil {
 		c.errorMut.Lock()
@@ -55,5 +55,9 @@ func (c *Checker) doCheck(check checks.Check) {
 
 	c.noticeMut.Lock()
 	defer c.noticeMut.Unlock()
+	if len(notices) == 0 {
+		c.logger.Infof("Check %q passed!", check.Name())
+		return
+	}
 	c.notices = append(c.notices, notices...)
 }
