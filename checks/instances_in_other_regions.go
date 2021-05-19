@@ -9,8 +9,8 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/ec2"
 	"github.com/hashicorp/go-multierror"
+	"github.com/moskyb/infrastructure-integrity-check/ec2_helper"
 	"github.com/pkg/errors"
-	"gitlab.com/sharesies/infrastructure-integrity-lambda/ec2_helper"
 )
 
 type InstancesInOtherRegions struct {

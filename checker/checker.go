@@ -7,7 +7,7 @@ import (
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 
-	"gitlab.com/sharesies/infrastructure-integrity-lambda/checks"
+	"github.com/moskyb/infrastructure-integrity-check/checks"
 )
 
 type Checker struct {

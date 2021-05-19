@@ -4,10 +4,10 @@ import (
 	"fmt"
 
 	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/moskyb/infrastructure-integrity-check/checker"
+	"github.com/moskyb/infrastructure-integrity-check/checks"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
-	"gitlab.com/sharesies/infrastructure-integrity-lambda/checker"
-	"gitlab.com/sharesies/infrastructure-integrity-lambda/checks"
 )
 
 func main() {
