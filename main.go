@@ -1,8 +1,9 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/kr/pretty"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	"gitlab.com/sharesies/infrastructure-integrity-lambda/checker"
@@ -22,5 +23,8 @@ func main() {
 		logger.Fatal(err)
 	}
 
-	pretty.Println(notices)
+	for _, notice := range notices {
+		fmt.Printf("NOTICE: %s\n\n", notice.Title)
+		fmt.Println(notice.Description)
+	}
 }
